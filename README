@@ -1,0 +1,6 @@
+MARC2RDF Modeler is a set of scripts intended to help provide an easily hackable and modifiable way to take MARC21 bibliographic records and model them as RDF/XML.  
+
+Requirements:
+  * enhanced_marc (http://github.com/rsinger/enhanced-marc/tree)
+  * datamapper (for LCSH linking)
+  * sqlite
