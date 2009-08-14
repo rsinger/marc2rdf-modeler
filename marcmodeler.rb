@@ -5,25 +5,35 @@ require 'jcode'
 require 'enhanced_marc'
 require 'rdf_resource'
 require 'lcsh_labels'
-reader = MARC::Reader.new('cca.utf8.mrc')
+require 'isbn/tools'
+reader = MARC::ForgivingReader.new('cca.utf8.mrc')
 
 i = 0
+
+class String
+  def slug
+    slug = self.gsub(/[^\w\s\-]/,"")
+    slug.gsub!(/\s/,"_")
+    slug.downcase
+  end  
+  def strip_trailing_punct
+    self.sub(/[\.:,;\/\s]\s*$/,'').strip
+  end
+  def strip_leading_and_trailing_punct
+    str = self.sub(/[\.:,;\/\s\)\]]\s*$/,'').strip
+    str.sub!(/^\s*[\.:,;\/\s\(\[]/,'').strip
+    str
+  end  
+  def lpad(count=1)
+    "#{" " * count}#{self}"
+  end
+end
 
 class MARC::Record
   @@base_uri = 'http://library.cca.edu/core'
   @@missing_id_prefix = 'cca'
   @@missing_id_counter = 0
-  
-  def strip_trailing_punct(str)
-    return str.sub(/[\.:,;\/\s]\s*$/,'').strip
-  end
-  
-  def slug_literal(str)
-    slug = str.gsub(/[^\w\s\-]/,"")
-    slug.gsub!(/\s/,"_")
-    slug.downcase
-  end
-  
+    
   def subdivided?(subject)
     subject.subfields.each do | subfield |
       if ["k","v","x","y","z"]
@@ -45,7 +55,7 @@ class MARC::Record
       end
       literal << subfield.value
     end
-    literal.sub(/\.\s*/,'')    
+    literal.strip_trailing_punct  
   end
   
   def top_concept(subject)
@@ -67,43 +77,53 @@ class MARC::Record
       @@missing_id_counter += 1
       self << controlnum
     end
-    id = self['001'].value
+    id = self['001'].value.strip
     resources << manifestation = RDFResource.new("#{@@base_uri}/m/#{id}")    
     manifestation.relate("[rdf:type]", "[frbr:Manifestation]")
     if self['245']
       if self['245']['a']
-        title = strip_trailing_punct(self['245']['a'])
-        manifestation.assert("[rda:titleProper]", strip_trailing_punct(self['245']['a']))
+        title = self['245']['a'].strip_trailing_punct
+        manifestation.assert("[rda:titleProper]", self['245']['a'].strip_trailing_punct)
       else
         puts "No 245$a:  #{self['245']}"
       end
       if self['245']['b']
-        title << " "+strip_trailing_punct(self['245']['b'])
-        manifestation.assert("[rda:otherTitleInformation]", strip_trailing_punct(self['245']['b']))
+        title << " "+self['245']['b'].strip_trailing_punct
+        manifestation.assert("[rda:otherTitleInformation]", self['245']['b'].strip_trailing_punct)
       end
       if self['245']['c']
-        manifestation.assert("[rda:statementOfResponsibility]", strip_trailing_punct(self['245']['c']))
+        manifestation.assert("[rda:statementOfResponsibility]", self['245']['c'].strip_trailing_punct)
       end
     end
     manifestation.assert("[dct:title]", title)
     if self['210']
-      manifestation.assert("[bibo:shortTitle]", strip_trailing_punct(self['210']['a']))
+      manifestation.assert("[bibo:shortTitle]", self['210']['a'].strip_trailing_punct)
     end
     if self['020'] && self['020']['a']
-      manifestation.assert("[bibo:isbn]", strip_trailing_punct(self['020']['a']))
+      isbn = ISBN_Tools.cleanup(self['020']['a'].strip_trailing_punct)
+      if ISBN_Tools.is_valid?(isbn)
+        #manifestation.assert("[bibo:isbn]", isbn)
+        if isbn.length == 10
+          manifestation.assert("[bibo:isbn10]",isbn)
+          manifestation.assert("[bibo:isbn13]", ISBN_Tools.isbn10_to_isbn13(isbn))
+        else
+          manifestation.assert("[bibo:isbn13]",isbn)
+          manifestation.assert("[bibo:isbn10]", ISBN_Tools.isbn13_to_isbn10(isbn))          
+        end
+      end
     end
     
     if self['022'] && self['022']['a']
-      manifestation.assert("[bibo:issn]", strip_trailing_punct(self['022']['a']))
+      manifestation.assert("[bibo:issn]", self['022']['a'].strip_trailing_punct)
     end    
     if self['250'] && self['250']['a']
       manifestation.assert("[bibo:edition]", self['250']['a'])
     end
     if self['246'] && self['246']['a']
-      manifestation.assert("[rda:parallelTitleProper]", strip_trailing_punct(self['246']['a']))
+      manifestation.assert("[rda:parallelTitleProper]", self['246']['a'].strip_trailing_punct)
     end
     if self['767'] && self['767']['t']
-      manifestation.assert("[rda:parallelTitleProper]", strip_trailing_punct(self['767']['t']))
+      manifestation.assert("[rda:parallelTitleProper]", self['767']['t'].strip_trailing_punct)
     end    
     subjects = self.find_all {|field| field.tag =~ /^6../}
     
@@ -122,17 +142,15 @@ class MARC::Record
         end
       end
       if ["600","610","611","630"].index(subject.tag) || !authority
-
-        slugged_id = slug_literal(literal)
         
         if subject.tag =~ /^(600|610|696|697)$/
           if !subdivided?(subject)
-            concept = RDFResource.new("#{@@base_uri}/i/#{slugged_id}#concept")
-            identity = RDFResource.new("#{@@base_uri}/i/#{slugged_id}")
+            concept = RDFResource.new("#{@@base_uri}/i/#{literal.slug}#concept")
+            identity = RDFResource.new("#{@@base_uri}/i/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{slugged_id}#concept")
+            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
             identity_subject = top_concept(subject)
-            identity = RDFResource.new("#{@@base_uri}/i/#{slug_literal(subject_to_string(identity_subject))}")
+            identity = RDFResource.new("#{@@base_uri}/i/#{subject_to_string(identity_subject).slug}")
           end
           if subject.tag =~ /^(600|696)$/
             identity.relate("[rdf:type]","[foaf:Person]")
@@ -158,12 +176,12 @@ class MARC::Record
           resources << identity      
         elsif subject.tag =~ /^(611|698)$/
           if !subdivided?(subject)
-            concept = RDFResource.new("#{@@base_uri}/e/#{slugged_id}#concept")
-            event = RDFResource.new("#{@@base_uri}/e/#{slugged_id}")
+            concept = RDFResource.new("#{@@base_uri}/e/#{literal.slug}#concept")
+            event = RDFResource.new("#{@@base_uri}/e/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{slugged_id}#concept")
+            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
             event_subject = top_concept(subject)
-            event = RDFResource.new("#{@@base_uri}/e/#{slug_literal(subject_to_string(identity_subject))}")
+            event = RDFResource.new("#{@@base_uri}/e/#{subject_to_string(event_subject).slug}")
           end   
           concept.relate("[skos:inScheme]", "#{@@base_uri}/s#meetings")          
           event.relate("[rdf:type]","[event:Event]")
@@ -179,12 +197,12 @@ class MARC::Record
           resources << event          
         elsif subject.tag =~ /^(630|699)$/
           unless subdivided?(subject)
-            concept = RDFResource.new("#{@@base_uri}/w/#{slugged_id}#concept")
-            work = RDFResource.new("#{@@base_uri}/w/#{slugged_id}")
+            concept = RDFResource.new("#{@@base_uri}/w/#{literal.slug}#concept")
+            work = RDFResource.new("#{@@base_uri}/w/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{slugged_id}#concept")
+            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
             work_subject = top_concept(subject)
-            work = RDFResource.new("#{@@base_uri}/w/#{slug_literal(subject_to_string(identity_subject))}")
+            work = RDFResource.new("#{@@base_uri}/w/#{subject_to_string(work_subject).slug}")
           end
           concept.relate("[skos:inScheme]", "#{@@base_uri}/s#uniformTitles")          
           work.relate("[rdf:type]","[frbr:Work]")
@@ -199,7 +217,7 @@ class MARC::Record
           end     
           resources << work     
         else
-          concept = RDFResource.new("#{@@base_uri}/s/#{slugged_id}#concept")  
+          concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")  
           if subject.tag =~ /^(650|690)$/
             concept.relate("[skos:inScheme]","#{@@base_uri}/s#topicalTerms")
           elsif subject.tag =~ /^(651|691)$/
@@ -235,8 +253,32 @@ class MARC::Record
       authority = false
     end
     if self['010'] && self['010']['a']
-      manifestation.assert("[bibo:lccn]", self['010']['a'])
+      manifestation.assert("[bibo:lccn]", self['010']['a'].strip)
     end
+    oclcnums = self.find_all {|field| field.tag == "035" && (field['a'] =~ /^\(OCoLC\)/ || field['b'] == "OCoLC")}
+    oclcnums.each do | oclcnum |
+      manifestation.assert("[bibo:oclcnum]",oclcnum['a'].sub(/^\(OCoLC\)/,''))
+    end
+    pages = self.find_all {|field| field.tag == "300" && (field['a'] =~ /\sp\./)}
+    pages.each do | page |
+      manifestation.assert("[bibo:pages]",page['a'].strip_trailing_punct)
+    end
+    if self.form      
+      manifestation.assert("[dc:format]", self.form(true))
+    end
+    if self['100']
+      identity = Identity.new_from_field(self['100'], "#{@@base_uri}/i/")     
+    end
+
+    persons = self.find_all{|field| field.tag =~ /700|100|800|600|896|790|690/ && (field['e'] || field['4'])}
+    persons.each do | person |
+      if person['e']
+        puts "$e: #{person['e']}"
+      end
+      if person['4']
+        puts "$4: #{person['4']}"
+      end      
+    end      
     resources
   end
 end
@@ -246,10 +288,14 @@ class MARC::BookRecord
   def to_rdf_resources
     resources = super
     book = resources[0]
-    book.relate("[rdf:type]", "[bibo:Book]")
+    if self.is_conference?
+      book.relate("[rdf:type]","[bibo:Proceedings]")
+    else
+      book.relate("[rdf:type]", "[bibo:Book]")
+    end
     if self.nature_of_contents
       self.nature_of_contents(true).each do | genre |        
-        book.assert("[cat:genre]", genre)
+        book.assert("[dct:type]", genre)
       end
     end
     #puts book.to_rdfxml
@@ -265,13 +311,77 @@ class MARC::DataField
   end
 end
 
+class Identity
+  def self.new_from_field(field, base_uri)
+    name = ''
+    if field.tag == '100'
+      name << field['a'].strip_trailing_punct
+      ['b','c','d','q'].each do | code |
+        name << field[code].lpad.strip_trailing_punct if field[code]
+      end
+    elsif field.tag == '110'
+      name << field['a'].strip_trailing_punct
+      ['b','c','d'].each do | code |
+        name << field[code].lpad.strip_trailing_punct if field[code]
+      end
+    end      
+    resource = RDFResource.new("#{base_uri}#{name.slug}")
+    if field.tag == '100'
+      resource.relate("[rdf:type]", "[foaf:Person]")
+      if field.indicator1 == "2"
+        last,first = field['a'].strip_trailing_punct.split(", ")
+        if last && first
+          resource.assert("[foaf:surname]", last)
+          resource.assert("[foaf:givenname]", first.strip)
+        end
+      end
+      if field['q']
+        resource.assert("[dct:alternate]", field['q'].strip_leading_and_trailing_punct)
+      end
+    elsif field.tag == '110'
+      resource.relate("[rdf:type]", "[foaf:Organization]")
+    end
+    resource.assert("[foaf:name]", field['a'].strip_trailing_punct)
+    if field['d']
+      resource.assert("[dct:date]", field['d'])
+    end
+    resource
+  end
+  
+  def self.relations(field)
+    
+  end
+end
+  
+begin
+  yaml = YAML.load_file('relation.yml')
+rescue Errno::ENOENT
+  relations = {}
+  reader.each do | record |
+    relators = record.find_all{|field| field.tag =~ /100|110|111|270|400|410|411|600|610|611|696|697|698|700|710|711|720|790|791|792|796|797|798|800|810|811|896|897|898/ && (field['e'] || field['4'])}
+    relators.each do | relator |
+      relator.subfields.each do | subfield |
+        if subfield.code == 'e' && !["111","270","411","611","698","711","792","798","811","898"].index(relator.tag)
+          relations[subfield.value.strip_trailing_punct] = nil
+        end
 
+        if subfield.code == "4"
+          relations[subfield.value.strip_trailing_punct] = nil
+        end
+      end      
+    end
+  end
+  fh = open('relation.yml', "w+")
+  fh << relations.to_yaml
+  fh.close
+  exit
+end
 @resources = []
 reader.each do | record |
   @resources += record.to_rdf_resources
   i += 1
-  break if i > 100
+  #break if i > 1000
 end
 @resources.each do | resource |
-  puts resource.to_rdfxml
+  #puts resource.to_rdfxml
 end
