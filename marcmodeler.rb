@@ -33,6 +33,7 @@ class MARC::Record
   @@base_uri = 'http://library.cca.edu/core'
   @@missing_id_prefix = 'cca'
   @@missing_id_counter = 0
+  @@relators = YAML::load_file('relation.yml')
     
   def subdivided?(subject)
     subject.subfields.each do | subfield |
@@ -145,23 +146,23 @@ class MARC::Record
         
         if subject.tag =~ /^(600|610|696|697)$/
           if !subdivided?(subject)
-            concept = RDFResource.new("#{@@base_uri}/i/#{literal.slug}#concept")
-            identity = RDFResource.new("#{@@base_uri}/i/#{literal.slug}")
+            concept = RDFResource.new("#{@@base_uri}/#{Identity.path(subject)}/#{literal.slug}#concept")
+            identity = RDFResource.new("#{@@base_uri}/#{Identity.path(subject)}/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
+            concept = RDFResource.new("#{@@base_uri}/subjects/#{literal.slug}#concept")
             identity_subject = top_concept(subject)
-            identity = RDFResource.new("#{@@base_uri}/i/#{subject_to_string(identity_subject).slug}")
+            identity = RDFResource.new("#{@@base_uri}/#{Identity.path(subject)}/#{subject_to_string(identity_subject).slug}")
           end
           if subject.tag =~ /^(600|696)$/
             identity.relate("[rdf:type]","[foaf:Person]")
             if subject['u']
-              identity.assert("[ov:affiliation]", subject['u'].sub)
+              identity.assert("[ov:affiliation]", subject['u'].strip_trailing_punct)
             end
-            concept.relate("[skos:inScheme]", "#{@@base_uri}/s#personalNames")
+            concept.relate("[skos:inScheme]", "#{@@base_uri}/subjects#personalNames")
           else
             identity.relate("[rdf:type]","[foaf:Organization]")
             identity.assert("[dct:description]", subject['u'])
-            concept.relate("[skos:inScheme]", "#{@@base_uri}/s#corporateNames")            
+            concept.relate("[skos:inScheme]", "#{@@base_uri}/subjects#corporateNames")            
           end
           concept.relate("[rdfs:seeAlso]", identity.uri)
           identity.relate("[rdfs:seeAlso]", concept.uri)
@@ -176,12 +177,12 @@ class MARC::Record
           resources << identity      
         elsif subject.tag =~ /^(611|698)$/
           if !subdivided?(subject)
-            concept = RDFResource.new("#{@@base_uri}/e/#{literal.slug}#concept")
-            event = RDFResource.new("#{@@base_uri}/e/#{literal.slug}")
+            concept = RDFResource.new("#{@@base_uri}/events/#{literal.slug}#concept")
+            event = RDFResource.new("#{@@base_uri}/events/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
+            concept = RDFResource.new("#{@@base_uri}/subjects/#{literal.slug}#concept")
             event_subject = top_concept(subject)
-            event = RDFResource.new("#{@@base_uri}/e/#{subject_to_string(event_subject).slug}")
+            event = RDFResource.new("#{@@base_uri}/events/#{subject_to_string(event_subject).slug}")
           end   
           concept.relate("[skos:inScheme]", "#{@@base_uri}/s#meetings")          
           event.relate("[rdf:type]","[event:Event]")
@@ -249,6 +250,7 @@ class MARC::Record
           end
         end
         resources << concept
+        manifestation.relate("[dct:subject]", concept.uri)
       end
       authority = false
     end
@@ -266,20 +268,64 @@ class MARC::Record
     if self.form      
       manifestation.assert("[dc:format]", self.form(true))
     end
-    if self['100']
-      identity = Identity.new_from_field(self['100'], "#{@@base_uri}/i/")     
-    end
 
-    persons = self.find_all{|field| field.tag =~ /700|100|800|600|896|790|690/ && (field['e'] || field['4'])}
-    persons.each do | person |
-      if person['e']
-        puts "$e: #{person['e']}"
-      end
-      if person['4']
-        puts "$4: #{person['4']}"
-      end      
-    end      
+    identities = self.find_all{|field| field.tag =~ /100|110|400|410|700|710|720|790|791|796|797|800|810|896|897/}
+    identities.each do | identity_field |
+      identity = Identity.new_from_field(identity_field, "#{@@base_uri}/")
+      resources << identity.resource
+      relate_identity(identity_field, manifestation, identity)
+    end 
+
+    meetings = self.find_all{|field| field.tag =~ /111|411|711|792|798|811|898/}
+    meetings.each do | meeting |
+      identity = Identity.new_from_field(identity_field, "#{@@base_uri}/events/")
+      resources << identity.resource
+      relate_identity(identity_field, manifestation, identity)
+    end         
     resources
+  end
+  
+  def relate_identity(datafield, resource, identity)
+    if ["100","110"].index(datafield.tag)
+      resource.relate("[dct:creator]", identity.resource.uri)
+      resource.assert("[dc:creator]",identity.name)
+    end
+    relationships = []
+    datafield.subfields.each do | subfield |
+      next unless subfield.code == 'e' || subfield.code == '4'
+      next unless @@relators[subfield.value.strip_trailing_punct]
+      if pointer = @@relators[subfield.value.strip_trailing_punct]["use"]
+        if @@relators[subfield.value.strip_trailing_punct]["use"].is_a?(Array)
+          @@relators[subfield.value.strip_trailing_punct]["use"].each {|u| relationships << @@relators[u] }
+        else
+          relationships << @@relators[pointer]  
+        end
+      else
+        relationships << @@relators[subfield.value.strip_trailing_punct]
+      end      
+    end
+    
+    unless relationships.empty?
+      relationships.uniq.each do | rel |
+        if rel["relationship"]
+          if rel["relationship"].is_a?(Array)
+            rel["relationship"].each do | r |
+              resource.relate(r, identity.resource.uri)
+            end
+          else
+            resource.relate(rel['relationship'], identity.resource.uri)
+          end
+        end
+        if rel["literal"]
+          resource.assert(rel['literal'], identity.name)
+        end
+      end
+    else
+      unless ["100","110"].index(datafield.tag)
+        resource.relate("[dct:contributor]", identity.resource.uri)
+        resource.assert("[dc:contributor]", identity.resource.name)        
+      end
+    end
   end
 end
 
@@ -312,23 +358,32 @@ class MARC::DataField
 end
 
 class Identity
+  attr_accessor :name, :resource
   def self.new_from_field(field, base_uri)
+    identity = self.new
     name = ''
-    if field.tag == '100'
-      name << field['a'].strip_trailing_punct
+
+    personal = ["100","400","700","790","796", "800","896"]
+    corporate = ["110","410","710","791","797", "810", "897"]
+
+    if personal.index(field.tag)
+      name << field['a']
       ['b','c','d','q'].each do | code |
-        name << field[code].lpad.strip_trailing_punct if field[code]
+        name << field[code].lpad if field[code]
       end
-    elsif field.tag == '110'
+    elsif corporate.index(field.tag)
       name << field['a'].strip_trailing_punct
       ['b','c','d'].each do | code |
-        name << field[code].lpad.strip_trailing_punct if field[code]
+        name << field[code].lpad if field[code]
       end
-    end      
-    resource = RDFResource.new("#{base_uri}#{name.slug}")
-    if field.tag == '100'
+    elsif field.tag == "720"
+      name = field['a'].strip_trailing_punct
+    end   
+    identity.name = name.strip_trailing_punct   
+    resource = RDFResource.new("#{base_uri}#{self.path(field)}/#{name.slug}")
+    if personal.index(field.tag)
       resource.relate("[rdf:type]", "[foaf:Person]")
-      if field.indicator1 == "2"
+      if field.indicator1 == "1"
         last,first = field['a'].strip_trailing_punct.split(", ")
         if last && first
           resource.assert("[foaf:surname]", last)
@@ -338,16 +393,44 @@ class Identity
       if field['q']
         resource.assert("[dct:alternate]", field['q'].strip_leading_and_trailing_punct)
       end
-    elsif field.tag == '110'
+      if field['u']
+        resource.assert("[ov:affiliation]", field['u'].strip_trailing_punct)
+      end
+    elsif corporate.index(field.tag)
       resource.relate("[rdf:type]", "[foaf:Organization]")
+      if field['u']
+        resource.assert("[dct:description]", field['u'].strip_trailing_punct)
+      end
+    elsif field.tag == "720"
+      if field.indicator1 == "1"
+        resource.relate("[rdf:type]", "[foaf:Person]")
+      else
+        resource.relate("[rdf:type]", "[foaf:Agent]")
+      end
     end
     resource.assert("[foaf:name]", field['a'].strip_trailing_punct)
     if field['d']
       resource.assert("[dct:date]", field['d'])
     end
-    resource
+    identity.resource = resource
+    identity
   end
-  
+  def self.path(datafield)
+    personal = ["100","400", "600","696","700","790","796", "800","896"]
+    corporate = ["110","410", "610", "697","710","791","797", "810", "897"]
+    if personal.index(datafield.tag)
+      return "people"
+    elsif corporate.index(datafield.tag)
+      return "organizations"
+    elsif datafield.tag == "720"
+      if datafield.indicator1 == "1"
+        return "people"
+      else
+        return "agents"
+      end
+    end
+  end
+    
   def self.relations(field)
     
   end
@@ -380,8 +463,10 @@ end
 reader.each do | record |
   @resources += record.to_rdf_resources
   i += 1
-  #break if i > 1000
+  break if i > 1000
 end
+puts "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
 @resources.each do | resource |
-  #puts resource.to_rdfxml
+  puts resource.to_rdfxml
 end
+puts "</rdf:RDF>"

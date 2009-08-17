@@ -7,15 +7,25 @@ class RDFResource
   def initialize(uri)
     Curie.add_prefixes! :frbr=>"http://vocab.org/frbr/core#", :dct=>"http://purl.org/dc/terms/", :bibo=>"http://purl.org/ontology/bibo/",
       :skos=>"http://www.w3.org/2004/02/skos/core#", :rda=>"http://RDVocab.info/Elements/", :cat=>"http://schema.talis.com/2009/catalontology/",
-       :rdfs=>"http://www.w3.org/2000/01/rdf-schema#", :ov=>"http://open.vocab.org/terms/", :event=>"http://purl.org/NET/c4dm/event.owl#"    
-    @uri = Curie.parse uri
+       :rdfs=>"http://www.w3.org/2000/01/rdf-schema#", :ov=>"http://open.vocab.org/terms/", :event=>"http://purl.org/NET/c4dm/event.owl#",
+       :role=>"http://RDVocab.info/roles/", :mo=>"http://purl.org/ontology/mo/", :rdf=>'http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+    
+    if uri.could_be_a_safe_curie?
+      @uri = Curie.parse uri
+    else
+      @uri = uri
+    end
     @namespaces = ['http://www.w3.org/1999/02/22-rdf-syntax-ns#']
 
     @modifiers = {}
   end
   
   def assert(predicate, object, type=nil, lang=nil)
-    uri = URI.parse(Curie.parse predicate)
+    if predicate.could_be_a_safe_curie?
+      uri = URI.parse(Curie.parse predicate)
+    else
+      uri = URI.parse(predicate)
+    end
     ns = nil
     elem = nil
     if uri.fragment

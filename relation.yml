@@ -1,0 +1,232 @@
+--- 
+dst:
+    label: Distributor
+    relationship: "[bibo:distributor]"
+
+music:
+    use: intr
+ed: 
+    label: Editor
+    relationship: "[bibo:editor]"
+    multiple: "[bibo:editorList]"
+    literal: "[dc:contributor]"
+illus:
+    label: Illustrator
+    relationship: "[role:illustrator]"
+    literal: "[dc:contributor]"
+dedicatee:
+    label: Dedicatee
+    relationship: "[role:dedicatee]" 
+printer:
+    use: prt 
+intr:
+    label: Instrumentalist
+    relationship: "[role:instrumentalist]"
+    literal: "[dc:contributor]"
+nrt:
+    label: Narrator
+    relationship: "[role:narrator]"
+    literal: "[dc:contributor]"
+artist, illus:
+    use: illus 
+jt. comp:
+    use: comp 
+prt:
+    label: Printer
+    relationship: "[role:printer]"
+translator:
+    use: tr
+ed. and tr:
+    use:
+        - ed
+        - translator 
+pbl:
+    label: Publisher
+    relationship: "[dct:publisher]"
+    literal: "[dc:publisher]"
+cover designer:
+    label: Cover Designer
+    relationship: "[role:designer]" 
+artist:
+    label: Artist
+    relationship: "[role:artist]"
+    literal: "[dc:contributor]"
+fot: 
+hst:
+    label: Host
+    relationship: "[role:host]"
+    literal: "[dc:contributor]"
+act:
+    label: Actor
+    relationship: "[role:actor]"
+    literal: "[dc:contributor]"
+editor:
+    use: ed 
+arr:
+    label: Arranger
+    relationship: "[role:arrangerOfMusic]"
+    literal: "[dc:contributor]"    
+trans:
+    use: tr 
+prd:
+    label: Production personnel
+    relationship: "[dct:contributor]"  
+art:
+    use: artist 
+joint illus:
+    use: illus 
+camera operator:
+    label: Videographer
+    relationship: "[role:cinematographer]" 
+ctb:
+    label: Contributor
+    relationship: "[dct:contributor]"
+    literal: "[dc:contributor]"
+coaut:
+    use: aut 
+annotator:
+    label: Annotator
+    relationship: "[role:annotator]"
+    literal: "[dc:contributor]"
+flm:
+    label: Film editor
+    relationship: "[role:editorOfMovingImageWork]" 
+pht:
+    label: Photographer
+    relationship: "[role:photographer]"
+    literal: "[dc:contributor]"
+Co-auteur:
+    use: aut 
+prf:
+    label: Performer
+    relationship: "[role:performer]"
+    literal: "[dc:contributor]"
+Translator:
+    use: tr 
+joint compiler:
+    use: com
+com:
+    label: Compiler
+    relationship: "[role:compiler]"    
+ill:
+    use: illus 
+illustrator:
+    use: illus 
+drt:
+    label: Director
+    relationship: "[role:filmDirector]"
+    literal: "[dc:contributor]"    
+adp:
+    label: Adapter
+    relationship: "[dct:contributor]"
+    literal: "[dc:contributor]"    
+donor:
+    label: Donor
+    relationship: "[role:donor]" 
+defendant:
+    label: Defendant
+    relationship: "[role:defendant]" 
+architects:
+    label: Architect
+    relationship: "[role:architect]" 
+jt. ed:
+    use: ed 
+bookjacket designer:
+    label: Bookjacket designer
+    relationship: "[role:designer]" 
+research:
+    label: Researcher
+    relationship: "[dct:contributor]"
+cnd:
+    label: Conductor
+    relationship: "[role:conductor]"
+    literal: "[dc:contributor]"
+aus:
+    label: Screenwriter
+    relationship: "[role:screenwriter]" 
+jt. au:
+    use: aut 
+book designer:
+    label: Book designer
+    relationship: "[role:bookDesigner]" 
+joint comp:
+    use: cmp
+cmm:
+    label: Commentator
+    relationship: "[role:commentator]"
+    literal: "[dc:contributor]"
+cur:
+    label: Curator of an Exhibition
+    relationship: "[role:curator]"
+    literal: "[dc:contributor]"
+photographer:
+    use: pht 
+bookbinder:
+    label: Binder
+    relationship: "[role:binder]" 
+comp. and illus:
+    use: 
+        - com
+        - illus
+sgn:
+    label: Signer
+    relationship: "[role:signer]" 
+aut:
+    label: Author
+    relationship: "[dct:creator]"
+    literal: "[dc:creator]"
+jt. auth:
+    use: aut 
+publisher:
+    use: pbl 
+cng:
+    label: Cinematographer
+    relationship: "[role:directorOfPhotography]"
+    literal: "[dc:contributor]"
+joint tr:
+    use: tr 
+ive:
+    label: Interviewee
+    relationship:
+        - "[bibo:interviewee]"
+        - "[role:interviewee]"
+    literal: "[dc:contributor]"
+aud:
+    label: Author of dialog
+    relationship: "[dct:contributor]"
+    literal: "[dc:contributor]"
+spk:
+    label: Speaker
+    relationship: "[role:speaker]" 
+tr:
+    label: Translator
+    relationship: 
+        - "[bibo:translator]"
+        - "[role:translator]"
+    literal: "[dc:contributor]"
+bkp: 
+    label: Book producer
+    relationship: "[role:producer]"
+    literal: "[dc:publisher]"
+cmp:
+    label: Composer
+    relationship: "[role:composer]"
+    literal: "[dc:contributor]"
+comp:
+    use: cmp 
+pro:
+    label: Producer
+    relationship: 
+        - "[bibo:producer]"
+        - "[role:filmProducer]"
+    literal: "[dc:contributor]"
+comp. and tr:
+    use:
+        - com
+        - tr 
+edt:
+    use: ed 
+trl: 
+    use: tr
+binder: 
+    use: bookbinder
