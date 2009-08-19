@@ -1,0 +1,701 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix n1: <http://RDVocab.info/Elements/> .
+@prefix n2: <http://purl.org/dc/terms/> .
+@prefix n3: <http://purl.org/dc/elements/1.1/> .
+@prefix n5: <http://RDVocab.info/roles/> .
+
+<http://library.cca.edu/core/m/32434675>
+    n1:otherTitleInformation "images of the future" ;
+    n1:statementOfResponsibility "Metal Building Manufacturers Association" ;
+    n1:titleProper "Metal building systems" ;
+    n3:creator "Metal Building Manufacturers Association" ;
+    n3:subject "Buildings, Prefabricated", "Documentary films about architecture", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:creator <http://library.cca.edu/core/organizations/metal_building_manufacturers_association> ;
+    n2:date "between 1990 and 1995]" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85017811#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept> ;
+    n2:title "Metal building systems images of the future" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/documentary_films_about_architecture#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Documentary films about architecture" .
+
+<http://library.cca.edu/core/s/documentary_films--videorecordings#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Documentary films--Videorecordings" .
+
+<http://library.cca.edu/core/organizations/metal_building_manufacturers_association>
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://xmlns.com/foaf/0.1/name> "Metal Building Manufacturers Association" .
+
+<http://library.cca.edu/core/m/cca5>
+    n1:otherTitleInformation "new American furnituremakers" ;
+    n1:titleProper "Cut loose" ;
+    n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Furniture designers--United States", "Furniture--United States--History--20th century", "Nonfiction films" ;
+    n2:dateCopyrighted "1993." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85052538#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/furniture_designers--united_states#concept> ;
+    n2:title "Cut loose new American furnituremakers" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/furniture_designers--united_states#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Furniture designers--United States" .
+
+<http://library.cca.edu/core/s/documentary_films_about_art#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Documentary films about art" .
+
+<http://library.cca.edu/core/m/26409742>
+    n1:titleProper "Rubens" ;
+    n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Rubens, Peter Paul, Sir, 1577-1640" ;
+    n2:dateCopyrighted "1992." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept> ;
+    n2:title "Rubens" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640>
+    n2:date "1577-1640" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Rubens, Peter Paul," .
+
+<http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Rubens, Peter Paul, Sir, 1577-1640" .
+
+<http://library.cca.edu/core/m/cca8>
+    n1:otherTitleInformation "conjure women of the arts" ;
+    n1:titleProper "Betye & Alison Saar" ;
+    n3:subject "African American artists--Interviews", "Diversity resources, African and African American", "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Saar, Alison", "Saar, Betye", "Women artists--United States--Interviews" ;
+    n2:dateCopyrighted "1994." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/african_american_artists--interviews#concept>, <http://library.cca.edu/core/s/diversity_resources_african_and_african_american#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/women_artists--united_states--interviews#concept>, <http://library.cca.edu/core/subjects/saar_alison#concept>, <http://library.cca.edu/core/subjects/saar_betye#concept> ;
+    n2:title "Betye & Alison Saar conjure women of the arts" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/saar_alison>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/saar_alison#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Saar, Alison" .
+
+<http://library.cca.edu/core/subjects/saar_alison#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_alison> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Saar, Alison" .
+
+<http://library.cca.edu/core/people/saar_betye>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/saar_betye#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Saar, Betye" .
+
+<http://library.cca.edu/core/subjects/saar_betye#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_betye> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Saar, Betye" .
+
+<http://library.cca.edu/core/s/women_artists--united_states--interviews#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Women artists--United States--Interviews" .
+
+<http://library.cca.edu/core/s/african_american_artists--interviews#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "African American artists--Interviews" .
+
+<http://library.cca.edu/core/s/diversity_resources_african_and_african_american#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Diversity resources, African and African American" .
+
+<http://library.cca.edu/core/m/cca9>
+    n1:titleProper "Renoir" ;
+    n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Painters--France--Biography", "Renoir, Auguste, 1841-1919" ;
+    n2:date "198?]" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008108767#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept> ;
+    n2:title "Renoir" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/renoir_auguste_1841-1919>
+    n2:date "1841-1919" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Renoir, Auguste," .
+
+<http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/renoir_auguste_1841-1919> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Renoir, Auguste, 1841-1919" .
+
+<http://library.cca.edu/core/m/8986440>
+    n1:statementOfResponsibility "by DrSeuss" ;
+    n1:titleProper "Green eggs and ham" ;
+    n3:creator "Seuss, Dr" ;
+    n2:creator <http://library.cca.edu/core/people/seuss_dr> ;
+    n2:dateCopyrighted "1960." ;
+    n2:title "Green eggs and ham" ;
+    n2:type "Kit" ;
+    <http://purl.org/ontology/bibo/isbn10> "0394800168" ;
+    <http://purl.org/ontology/bibo/isbn13> "9780394800165" ;
+    a <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/seuss_dr>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/name> "Seuss" .
+
+<http://library.cca.edu/core/m/21237295>
+    n1:titleProper "Mahatma Gandhi" ;
+    n3:subject "Documentary films--Videorecordings", "Gandhi, Mahatma, 1869-1948", "India--Politics and government", "Nonfiction films", "Statesmen--India--Biography" ;
+    n2:dateCopyrighted "1988." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008111851#concept>, <http://lcsubjects.org/subjects/sh85064936#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept> ;
+    n2:title "Mahatma Gandhi" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/gandhi_mahatma_1869-1948>
+    n2:date "1869-1948" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Gandhi," .
+
+<http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/gandhi_mahatma_1869-1948> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Gandhi, Mahatma, 1869-1948" .
+
+<http://library.cca.edu/core/m/25192699>
+    n1:statementOfResponsibility "produced by Maryland Public Television and Central Independent Television, UK" ;
+    n1:titleProper "Legacy" ;
+    n3:subject "Civilization, Ancient", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:dateCopyrighted "1991." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85026433#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept> ;
+    n2:title "Legacy" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/m/15604190>
+    n1:statementOfResponsibility "an RM Arts and Basque Television co-production ; produced by William Leeson ; directed by Laurence Boulting" ;
+    n1:titleProper "Eduardo Chillida" ;
+    n3:subject "Chillida, Eduardo, 1924-2002", "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Sculptors--Spain--Interviews" ;
+    n2:dateCopyrighted "1985." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/sculptors--spain--interviews#concept>, <http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept> ;
+    n2:title "Eduardo Chillida" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/chillida_eduardo_1924-2002>
+    n2:date "1924-2002" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Chillida, Eduardo," .
+
+<http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/chillida_eduardo_1924-2002> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Chillida, Eduardo, 1924-2002" .
+
+<http://library.cca.edu/core/s/sculptors--spain--interviews#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Sculptors--Spain--Interviews" .
+
+<http://library.cca.edu/core/m/8986790>
+    n1:statementOfResponsibility "by DrSeuss" ;
+    n1:titleProper "How the Grinch stole Christmas" ;
+    n3:creator "Seuss, Dr" ;
+    n2:audience <http://library.cca.edu/core/audiences/general> ;
+    n2:creator <http://library.cca.edu/core/people/seuss_dr> ;
+    n2:dateCopyrighted "1957." ;
+    n2:title "How the Grinch stole Christmas" ;
+    n2:type "Kit" ;
+    <http://purl.org/ontology/bibo/isbn10> "0394800796" ;
+    <http://purl.org/ontology/bibo/isbn13> "9780394800790" ;
+    a <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/audiences/general>
+    n2:title "General" ;
+    a n2:AgentClass .
+
+<http://library.cca.edu/core/m/20314080>
+    n1:otherTitleInformation "the raft of the Medusa = Le radeau de la méduse" ;
+    n1:titleProper "Gericault" ;
+    n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Géricault, Théodore, 1791-1824", "Nonfiction films" ;
+    n2:audience <http://library.cca.edu/core/audiences/adult> ;
+    n2:date "1973?" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept> ;
+    n2:title "Gericault the raft of the Medusa = Le radeau de la méduse" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824>
+    n2:date "1791-1824" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Géricault, Théodore," .
+
+<http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Géricault, Théodore, 1791-1824" .
+
+<http://library.cca.edu/core/audiences/adult>
+    n2:title "Adult" ;
+    a n2:AgentClass .
+
+<http://library.cca.edu/core/m/19542883>
+    n1:titleProper "Retour a la raison [videorecording] ; Emak Bakia [videorecording] ; Mysteries du Chateau du De [videorecording] /cMan Ray" ;
+    n3:creator "Ray, Man, 1890-1976" ;
+    n3:subject "Experimental films--Videorecordings", "Fiction films--France", "Ray, Man, 1890-1976" ;
+    n2:creator <http://library.cca.edu/core/people/ray_man_1890-1976> ;
+    n2:date "1987?" ;
+    n2:subject <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/fiction_films--france#concept>, <http://library.cca.edu/core/subjects/ray_man_1890-1976#concept> ;
+    n2:title "Retour a la raison [videorecording] ; Emak Bakia [videorecording] ; Mysteries du Chateau du De [videorecording] /cMan Ray" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/ray_man_1890-1976>
+    n2:date "1890-1976" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/ray_man_1890-1976#concept> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Man" ;
+    <http://xmlns.com/foaf/0.1/name> "Ray, Man", "Ray, Man," ;
+    <http://xmlns.com/foaf/0.1/surname> "Ray" .
+
+<http://library.cca.edu/core/subjects/ray_man_1890-1976#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ray_man_1890-1976> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Ray, Man, 1890-1976" .
+
+<http://library.cca.edu/core/s/fiction_films--france#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#genreFormTerms>, <http://library.cca.edu/core/s#geographicSubdivision> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Fiction films--France" .
+
+<http://library.cca.edu/core/s/experimental_films--videorecordings#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Experimental films--Videorecordings" .
+
+<http://library.cca.edu/core/m/cca54>
+    n1:statementOfResponsibility "Larry Kless" ;
+    n1:titleProper "Works by Larry Kless" ;
+    n3:creator "Kless, Larry" ;
+    n3:subject "Experimental films--Videorecordings", "Nonfiction films", "Video and performance art--Videorecordings" ;
+    n2:creator <http://library.cca.edu/core/people/kless_larry> ;
+    n2:date "1991" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept> ;
+    n2:title "Works by Larry Kless" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Video and performance art--Videorecordings" .
+
+<http://library.cca.edu/core/people/kless_larry>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Larry" ;
+    <http://xmlns.com/foaf/0.1/name> "Kless, Larry" ;
+    <http://xmlns.com/foaf/0.1/surname> "Kless" .
+
+<http://library.cca.edu/core/m/27828620>
+    n1:statementOfResponsibility "un programma di Piero Berengo Gardin ; una produzione RAI Radiotelevisione Italiana, Mainos TV, Helsinki, RM productions, Monaco" ;
+    n1:titleProper "Alvar Aalto" ;
+    n3:subject "Aalto, Alvar, 1898-1976", "Documentary films about architecture", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:date "198-?" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept> ;
+    n2:title "Alvar Aalto" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/aalto_alvar_1898-1976>
+    n2:date "1898-1976" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Aalto, Alvar," .
+
+<http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/aalto_alvar_1898-1976> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Aalto, Alvar, 1898-1976" .
+
+<http://library.cca.edu/core/m/36869669>
+    n1:otherTitleInformation "Villa La Roche" ;
+    n1:statementOfResponsibility "written and presented by Tim Benton ; producer, Nick Levinson ; a production for the Open University" ;
+    n1:titleProper "Le Corbusier" ;
+    n3:subject "Architecture--France--Paris--History--20th century", "Documentary films about architecture", "Documentary films--Videorecordings", "Le Corbusier, 1887-1965", "Nonfiction films", "Villa La Roche" ;
+    n2:dateCopyrighted "1991." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/architecture--france--paris--history--20th_century#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/subjects/villa_la_roche#concept> ;
+    n2:title "Le Corbusier Villa La Roche" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/le_corbusier_1887-1965>
+    n2:date "1887-1965" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Le Corbusier," .
+
+<http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/le_corbusier_1887-1965> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Le Corbusier, 1887-1965" .
+
+<http://library.cca.edu/core/organizations/villa_la_roche>
+    n2:description "" ;
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/villa_la_roche#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Villa La Roche" .
+
+<http://library.cca.edu/core/subjects/villa_la_roche#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_la_roche> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Villa La Roche" .
+
+<http://library.cca.edu/core/s/architecture--france--paris--history--20th_century#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#chronologicalSubdivision>, <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Architecture--France--Paris--History--20th century" .
+
+<http://library.cca.edu/core/m/22736615>
+    n1:otherTitleInformation "the spirit of Barcelona" ;
+    n1:titleProper "Gaudi" ;
+    n3:subject "Barcelona (Spain)", "Documentary films about architecture", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:date "19--" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/barcelona_spain#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept> ;
+    n2:title "Gaudi the spirit of Barcelona" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/barcelona_spain#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#geographicNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Barcelona (Spain)" .
+
+<http://library.cca.edu/core/m/18511675>
+    n1:otherTitleInformation "selected works" ;
+    n1:titleProper "Bill Viola" ;
+    n3:creator "Viola, Bill, 1951-" ;
+    n3:subject "Experimental films--Videorecordings", "Nonfiction films", "Video and performance art--Videorecordings", "Video art--United States", "Viola, Bill, 1951-" ;
+    n2:creator <http://library.cca.edu/core/people/viola_bill_1951-> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept>, <http://library.cca.edu/core/s/video_art--united_states#concept>, <http://library.cca.edu/core/subjects/viola_bill_1951-#concept> ;
+    n2:title "Bill Viola selected works" ;
+    <http://purl.org/ontology/bibo/isbn10> "0931393280" ;
+    <http://purl.org/ontology/bibo/isbn13> "9780931393280" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/viola_bill_1951->
+    n2:date "1951-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/viola_bill_1951-#concept> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Bill" ;
+    <http://xmlns.com/foaf/0.1/name> "Viola, Bill", "Viola, Bill," ;
+    <http://xmlns.com/foaf/0.1/surname> "Viola" .
+
+<http://library.cca.edu/core/subjects/viola_bill_1951-#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/viola_bill_1951-> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Viola, Bill, 1951-" .
+
+<http://library.cca.edu/core/s/video_art--united_states#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Video art--United States" .
+
+<http://library.cca.edu/core/m/23685346>
+    n1:titleProper "The Hong Kong and Shanghai bank" ;
+    n3:subject "Bank buildings--Hong Kong (China)", "Documentary films about architecture", "Documentary films--Videorecordings", "Hong Kong and Shanghai Bank (Hong Kong)", "Nonfiction films" ;
+    n2:dateCopyrighted "1987." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/bank_buildings--hong_kong_china#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept> ;
+    n2:title "The Hong Kong and Shanghai bank" ;
+    <http://purl.org/ontology/bibo/edition> "Special ed" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong>
+    n2:description "" ;
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Hong Kong and Shanghai Bank (Hong Kong)" .
+
+<http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Hong Kong and Shanghai Bank (Hong Kong)" .
+
+<http://library.cca.edu/core/s/bank_buildings--hong_kong_china#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Bank buildings--Hong Kong (China)" .
+
+<http://library.cca.edu/core/m/27828428>
+    n1:otherTitleInformation "Villa Savoye" ;
+    n1:statementOfResponsibility "production, Nick Levinson ; a production for the Open University" ;
+    n1:titleProper "Le Corbusier" ;
+    n3:subject "Documentary films about architecture", "Documentary films--Videorecordings", "Le Corbusier, 1887-1965", "Nonfiction films", "Poissy (France)--Buildings, structures, etc", "Villa Savoye (Poissy, France)" ;
+    n2:dateCopyrighted "1975." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh98005282#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/s/poissy_france--buildings_structures_etc#concept>, <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept> ;
+    n2:title "Le Corbusier Villa Savoye" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/organizations/villa_savoye_poissy_france>
+    n2:description "" ;
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Villa Savoye (Poissy, France)" .
+
+<http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_savoye_poissy_france> ;
+    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://lcsubjects.org/subjects/sh98005282#concept> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Villa Savoye (Poissy, France)" .
+
+<http://library.cca.edu/core/s/poissy_france--buildings_structures_etc#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#geographicNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Poissy (France)--Buildings, structures, etc" .
+
+<http://library.cca.edu/core/m/42656613>
+    n1:otherTitleInformation "First dream" ;
+    n1:statementOfResponsibility "Bill Viola" ;
+    n1:titleProper "Hatsu-yume" ;
+    n3:creator "Viola, Bill, 1951-" ;
+    n3:subject "Experimental films--Videorecordings", "Nonfiction films", "Video and performance art--Videorecordings", "Video art" ;
+    n2:audience <http://library.cca.edu/core/audiences/adult> ;
+    n2:creator <http://library.cca.edu/core/people/viola_bill_1951-> ;
+    n2:dateCopyrighted "1998." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85143195#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept> ;
+    n2:title "Hatsu-yume First dream" ;
+    <http://purl.org/ontology/bibo/isbn10> "9055190551" ;
+    <http://purl.org/ontology/bibo/isbn13> "9789055190553" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/m/46365302>
+    n1:otherTitleInformation "a documentary drama on the life of Ammachi" ;
+    n1:parallelTitleProper "Life of Ammachi" ;
+    n1:titleProper "River of love" ;
+    n3:subject "Amr̥tānandamayi, Mātā, 1953-", "Documentary films--Videorecordings", "Nonfiction films", "Spiritual life--Hinduism" ;
+    n2:dateCopyrighted "1999." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85126769#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept> ;
+    n2:title "River of love a documentary drama on the life of Ammachi" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953->
+    n2:date "1953-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Amr̥tānandamayi," .
+
+<http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Amr̥tānandamayi, Mātā, 1953-" .
+
+<http://library.cca.edu/core/m/44685733>
+    n1:parallelTitleProper "Eclectica" ;
+    n1:statementOfResponsibility "A&E Television Networks" ;
+    n1:titleProper "House beautiful" ;
+    n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Interior decoration--Audio-visual aids", "Nonfiction films" ;
+    n2:dateCopyrighted "1999." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/interior_decoration--audio-visual_aids#concept> ;
+    n2:title "House beautiful" ;
+    <http://purl.org/ontology/bibo/isbn10> "0767025245" ;
+    <http://purl.org/ontology/bibo/isbn13> "9780767025249" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/interior_decoration--audio-visual_aids#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Interior decoration--Audio-visual aids" .
+
+<http://library.cca.edu/core/m/11695172>
+    n1:titleProper "Video as art" ;
+    n3:subject "Art, Modern--20th century", "Documentary films--Videorecordings", "Nonfiction films", "Video art" ;
+    n2:audience <http://library.cca.edu/core/audiences/adult> ;
+    n2:dateCopyrighted "1983." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85007805#concept>, <http://lcsubjects.org/subjects/sh85143195#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept> ;
+    n2:title "Video as art" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/m/cca95>
+    n1:otherTitleInformation "May 2, 2003" ;
+    n1:titleProper "Gertrude Schaufel memorial" ;
+    n3:subject "Documentation films--Videorecordings", "Nonfiction films", "Schaufel, Gertrude, 1921-2003" ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentation_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept> ;
+    n2:title "Gertrude Schaufel memorial May 2, 2003" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/schaufel_gertrude_1921-2003>
+    n2:date "1921-2003" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Schaufel, Gertrude," .
+
+<http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/schaufel_gertrude_1921-2003> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Schaufel, Gertrude, 1921-2003" .
+
+<http://library.cca.edu/core/s/documentation_films--videorecordings#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#genreFormTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Documentation films--Videorecordings" .
+
+<http://library.cca.edu/core/m/52076100>
+    n1:parallelTitleProper "String of pearls" ;
+    n1:titleProper "Rosie the riveter" ;
+    n3:subject "Documentary films--Videorecordings", "Nonfiction films", "United States--History--World War, 1939-1945", "World War, 1939-1945--United States", "World War, 1939-1945--Women--United States" ;
+    n2:dateCopyrighted "2001." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008113676#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/united_states--history--world_war_1939-1945#concept>, <http://library.cca.edu/core/s/world_war_1939-1945--united_states#concept> ;
+    n2:title "Rosie the riveter" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/world_war_1939-1945--united_states#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "World War, 1939-1945--United States" .
+
+<http://library.cca.edu/core/s/united_states--history--world_war_1939-1945#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#geographicNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "United States--History--World War, 1939-1945" .
+
+<http://library.cca.edu/core/m/56772783>
+    n1:otherTitleInformation "selected films 1973-1993" ;
+    n1:statementOfResponsibility "Chris Welsby" ;
+    n1:titleProper "Chris Welsby" ;
+    n3:subject "Experimental films", "Experimental films--Videorecordings", "Nonfiction films", "Video art", "Welsby, Chris" ;
+    n2:dateCopyrighted "2004." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2007025206#concept>, <http://lcsubjects.org/subjects/sh85046442#concept>, <http://lcsubjects.org/subjects/sh85143195#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/welsby_chris#concept> ;
+    n2:title "Chris Welsby selected films 1973-1993" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/welsby_chris>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/welsby_chris#concept> ;
+    <http://xmlns.com/foaf/0.1/name> "Welsby, Chris" .
+
+<http://library.cca.edu/core/subjects/welsby_chris#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/welsby_chris> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Welsby, Chris" .
+
+<http://library.cca.edu/core/m/32325771>
+    n1:otherTitleInformation "our universe within" ;
+    n1:statementOfResponsibility "The Discovery Channel" ;
+    n1:titleProper "The brain" ;
+    n3:subject "Brain--Diseases", "Brain--Injuries", "Brain--Physiology", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:dateCopyrighted "1994." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2007102128#concept>, <http://lcsubjects.org/subjects/sh85016332#concept>, <http://library.cca.edu/core/s/brain--injuries#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept> ;
+    n2:title "The brain our universe within" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/brain--injuries#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#generalSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Brain--Injuries" .
+
+<http://library.cca.edu/core/m/70887603>
+    n1:parallelTitleProper "Two sculptors" ;
+    n1:statementOfResponsibility "directed by Chris Felver" ;
+    n1:titleProper "2 sculptors" ;
+    n5:commentator <http://library.cca.edu/core/people/yau_john_1950-> ;
+    n5:directorOfPhotography <http://library.cca.edu/core/people/herberich_bill> ;
+    n5:editorOfMovingImageWork <http://library.cca.edu/core/people/christie_lyle>, <http://library.cca.edu/core/people/felver_christopher_1946->, <http://library.cca.edu/core/people/pearsall_marilla>, <http://library.cca.edu/core/people/szalapski_james> ;
+    n5:filmDirector <http://library.cca.edu/core/people/felver_christopher_1946-> ;
+    n5:interviewee <http://library.cca.edu/core/people/cragg_tony_1949->, <http://library.cca.edu/core/people/judd_donald_1928-1994> ;
+    n5:photographer <http://library.cca.edu/core/people/felver_christopher_1946->, <http://library.cca.edu/core/people/szalapski_james> ;
+    n3:contributor "Cragg, Tony, 1949-", "Felver, Christopher, 1946-", "Herberich, Bill", "Judd, Donald, 1928-1994", "Szalapski, James", "Yau, John, 1950-" ;
+    n3:creator "Pearsall, Marilla" ;
+    n3:publisher "Arthouse Inc", "Palm Pictures" ;
+    n3:subject "Cragg, Tony, 1949---Interviews", "Documentary films about art", "Documentary films--Videorecordings", "Judd, Donald, 1928-1994--Interviews", "Nonfiction films", "Sculptors--Great Britain--Interviews", "Sculptors--United States--Interviews", "Sculpture, American--20th century", "Sculpture, English--20th century" ;
+    n2:creator <http://library.cca.edu/core/people/pearsall_marilla> ;
+    n2:date "2006" ;
+    n2:publisher <http://library.cca.edu/core/organizations/arthouse_inc>, <http://library.cca.edu/core/organizations/palm_pictures> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85119142#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/sculptors--great_britain--interviews#concept>, <http://library.cca.edu/core/s/sculptors--united_states--interviews#concept>, <http://library.cca.edu/core/s/sculpture_english--20th_century#concept>, <http://library.cca.edu/core/subjects/cragg_tony_1949---interviews#concept>, <http://library.cca.edu/core/subjects/judd_donald_1928-1994--interviews#concept> ;
+    n2:title "2 sculptors" ;
+    <http://purl.org/ontology/bibo/interviewee> <http://library.cca.edu/core/people/cragg_tony_1949->, <http://library.cca.edu/core/people/judd_donald_1928-1994> ;
+    <http://purl.org/ontology/bibo/isbn10> "0977783162" ;
+    <http://purl.org/ontology/bibo/isbn13> "9780977783168" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/people/judd_donald_1928-1994>
+    n2:date "1928-1994" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/judd_donald_1928-1994--interviews#concept> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Donald" ;
+    <http://xmlns.com/foaf/0.1/name> "Judd, Donald", "Judd, Donald," ;
+    <http://xmlns.com/foaf/0.1/surname> "Judd" .
+
+<http://library.cca.edu/core/subjects/judd_donald_1928-1994--interviews#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/judd_donald_1928-1994> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Judd, Donald, 1928-1994--Interviews" .
+
+<http://library.cca.edu/core/people/cragg_tony_1949->
+    n2:date "1949-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/cragg_tony_1949---interviews#concept> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Tony" ;
+    <http://xmlns.com/foaf/0.1/name> "Cragg, Tony", "Cragg, Tony," ;
+    <http://xmlns.com/foaf/0.1/surname> "Cragg" .
+
+<http://library.cca.edu/core/subjects/cragg_tony_1949---interviews#concept>
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/cragg_tony_1949-> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/subjects#personalNames> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Cragg, Tony, 1949---Interviews" .
+
+<http://library.cca.edu/core/s/sculptors--united_states--interviews#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Sculptors--United States--Interviews" .
+
+<http://library.cca.edu/core/s/sculptors--great_britain--interviews#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#formSubdivision>, <http://library.cca.edu/core/s#geographicSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Sculptors--Great Britain--Interviews" .
+
+<http://library.cca.edu/core/s/sculpture_english--20th_century#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#chronologicalSubdivision>, <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Sculpture, English--20th century" .
+
+<http://library.cca.edu/core/people/felver_christopher_1946->
+    n2:date "1946-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Christopher" ;
+    <http://xmlns.com/foaf/0.1/name> "Felver, Christopher" ;
+    <http://xmlns.com/foaf/0.1/surname> "Felver" .
+
+<http://library.cca.edu/core/people/pearsall_marilla>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Marilla" ;
+    <http://xmlns.com/foaf/0.1/name> "Pearsall, Marilla" ;
+    <http://xmlns.com/foaf/0.1/surname> "Pearsall" .
+
+<http://library.cca.edu/core/people/yau_john_1950->
+    n2:date "1950-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "John" ;
+    <http://xmlns.com/foaf/0.1/name> "Yau, John" ;
+    <http://xmlns.com/foaf/0.1/surname> "Yau" .
+
+<http://library.cca.edu/core/people/christie_lyle>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Lyle" ;
+    <http://xmlns.com/foaf/0.1/name> "Christie, Lyle" ;
+    <http://xmlns.com/foaf/0.1/surname> "Christie" .
+
+<http://library.cca.edu/core/people/herberich_bill>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Bill" ;
+    <http://xmlns.com/foaf/0.1/name> "Herberich, Bill" ;
+    <http://xmlns.com/foaf/0.1/surname> "Herberich" .
+
+<http://library.cca.edu/core/people/szalapski_james>
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "James" ;
+    <http://xmlns.com/foaf/0.1/name> "Szalapski, James" ;
+    <http://xmlns.com/foaf/0.1/surname> "Szalapski" .
+
+<http://library.cca.edu/core/organizations/palm_pictures>
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://xmlns.com/foaf/0.1/name> "Palm Pictures" .
+
+<http://library.cca.edu/core/organizations/arthouse_inc>
+    a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://xmlns.com/foaf/0.1/name> "Arthouse Inc" .
+
+<http://library.cca.edu/core/m/cca315>
+    n1:titleProper "Conceptual paradise" ;
+    n3:creator "Römer, Stefan,  1960-" ;
+    n3:subject "Conceptual art", "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films" ;
+    n2:accessRights "Educational use only; no PPR" ;
+    n2:creator <http://library.cca.edu/core/people/ro\u0308mer_stefan__1960-> ;
+    n2:dateCopyrighted "2005." ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/conceptual_art#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept> ;
+    n2:title "Conceptual paradise" ;
+    a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
+
+<http://library.cca.edu/core/s/conceptual_art#concept>
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/s#topicalTerms> ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptual art" .
+
+<http://library.cca.edu/core/people/ro\u0308mer_stefan__1960->
+    n2:date "1960-" ;
+    a <http://xmlns.com/foaf/0.1/Person> ;
+    <http://xmlns.com/foaf/0.1/givenname> "Stefan" ;
+    <http://xmlns.com/foaf/0.1/name> "Römer, Stefan" ;
+    <http://xmlns.com/foaf/0.1/surname> "Römer" .
+
