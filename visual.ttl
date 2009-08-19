@@ -49,17 +49,17 @@
     n1:titleProper "Rubens" ;
     n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Rubens, Peter Paul, Sir, 1577-1640" ;
     n2:dateCopyrighted "1992." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept> ;
     n2:title "Rubens" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640>
     n2:date "1577-1640" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Rubens, Peter Paul," .
 
-<http://library.cca.edu/core/subjects/rubens_peter_paul_sir_1577-1640#concept>
+<http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/rubens_peter_paul_sir_1577-1640> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Rubens, Peter Paul, Sir, 1577-1640" .
@@ -69,26 +69,26 @@
     n1:titleProper "Betye & Alison Saar" ;
     n3:subject "African American artists--Interviews", "Diversity resources, African and African American", "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Saar, Alison", "Saar, Betye", "Women artists--United States--Interviews" ;
     n2:dateCopyrighted "1994." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/african_american_artists--interviews#concept>, <http://library.cca.edu/core/s/diversity_resources_african_and_african_american#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/women_artists--united_states--interviews#concept>, <http://library.cca.edu/core/subjects/saar_alison#concept>, <http://library.cca.edu/core/subjects/saar_betye#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/saar_alison#concept>, <http://library.cca.edu/core/people/saar_betye#concept>, <http://library.cca.edu/core/s/african_american_artists--interviews#concept>, <http://library.cca.edu/core/s/diversity_resources_african_and_african_american#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/women_artists--united_states--interviews#concept> ;
     n2:title "Betye & Alison Saar conjure women of the arts" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/saar_alison>
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/saar_alison#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_alison#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Saar, Alison" .
 
-<http://library.cca.edu/core/subjects/saar_alison#concept>
+<http://library.cca.edu/core/people/saar_alison#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_alison> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Saar, Alison" .
 
 <http://library.cca.edu/core/people/saar_betye>
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/saar_betye#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_betye#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Saar, Betye" .
 
-<http://library.cca.edu/core/subjects/saar_betye#concept>
+<http://library.cca.edu/core/people/saar_betye#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/saar_betye> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Saar, Betye" .
@@ -109,17 +109,17 @@
     n1:titleProper "Renoir" ;
     n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Painters--France--Biography", "Renoir, Auguste, 1841-1919" ;
     n2:date "198?]" ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008108767#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008108767#concept>, <http://library.cca.edu/core/people/renoir_auguste_1841-1919#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept> ;
     n2:title "Renoir" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/renoir_auguste_1841-1919>
     n2:date "1841-1919" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/renoir_auguste_1841-1919#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Renoir, Auguste," .
 
-<http://library.cca.edu/core/subjects/renoir_auguste_1841-1919#concept>
+<http://library.cca.edu/core/people/renoir_auguste_1841-1919#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/renoir_auguste_1841-1919> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Renoir, Auguste, 1841-1919" .
@@ -144,17 +144,17 @@
     n1:titleProper "Mahatma Gandhi" ;
     n3:subject "Documentary films--Videorecordings", "Gandhi, Mahatma, 1869-1948", "India--Politics and government", "Nonfiction films", "Statesmen--India--Biography" ;
     n2:dateCopyrighted "1988." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008111851#concept>, <http://lcsubjects.org/subjects/sh85064936#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2008111851#concept>, <http://lcsubjects.org/subjects/sh85064936#concept>, <http://library.cca.edu/core/people/gandhi_mahatma_1869-1948#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept> ;
     n2:title "Mahatma Gandhi" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/gandhi_mahatma_1869-1948>
     n2:date "1869-1948" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/gandhi_mahatma_1869-1948#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Gandhi," .
 
-<http://library.cca.edu/core/subjects/gandhi_mahatma_1869-1948#concept>
+<http://library.cca.edu/core/people/gandhi_mahatma_1869-1948#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/gandhi_mahatma_1869-1948> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Gandhi, Mahatma, 1869-1948" .
@@ -173,17 +173,17 @@
     n1:titleProper "Eduardo Chillida" ;
     n3:subject "Chillida, Eduardo, 1924-2002", "Documentary films about art", "Documentary films--Videorecordings", "Nonfiction films", "Sculptors--Spain--Interviews" ;
     n2:dateCopyrighted "1985." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/sculptors--spain--interviews#concept>, <http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/chillida_eduardo_1924-2002#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/s/sculptors--spain--interviews#concept> ;
     n2:title "Eduardo Chillida" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/chillida_eduardo_1924-2002>
     n2:date "1924-2002" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/chillida_eduardo_1924-2002#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Chillida, Eduardo," .
 
-<http://library.cca.edu/core/subjects/chillida_eduardo_1924-2002#concept>
+<http://library.cca.edu/core/people/chillida_eduardo_1924-2002#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/chillida_eduardo_1924-2002> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Chillida, Eduardo, 1924-2002" .
@@ -215,17 +215,17 @@
     n3:subject "Documentary films about art", "Documentary films--Videorecordings", "Géricault, Théodore, 1791-1824", "Nonfiction films" ;
     n2:audience <http://library.cca.edu/core/audiences/adult> ;
     n2:date "1973?" ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept>, <http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_art#concept> ;
     n2:title "Gericault the raft of the Medusa = Le radeau de la méduse" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824>
     n2:date "1791-1824" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Géricault, Théodore," .
 
-<http://library.cca.edu/core/subjects/ge\u0301ricault_the\u0301odore_1791-1824#concept>
+<http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ge\u0301ricault_the\u0301odore_1791-1824> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Géricault, Théodore, 1791-1824" .
@@ -240,19 +240,19 @@
     n3:subject "Experimental films--Videorecordings", "Fiction films--France", "Ray, Man, 1890-1976" ;
     n2:creator <http://library.cca.edu/core/people/ray_man_1890-1976> ;
     n2:date "1987?" ;
-    n2:subject <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/fiction_films--france#concept>, <http://library.cca.edu/core/subjects/ray_man_1890-1976#concept> ;
+    n2:subject <http://library.cca.edu/core/people/ray_man_1890-1976#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/fiction_films--france#concept> ;
     n2:title "Retour a la raison [videorecording] ; Emak Bakia [videorecording] ; Mysteries du Chateau du De [videorecording] /cMan Ray" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/ray_man_1890-1976>
     n2:date "1890-1976" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/ray_man_1890-1976#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ray_man_1890-1976#concept> ;
     <http://xmlns.com/foaf/0.1/givenname> "Man" ;
     <http://xmlns.com/foaf/0.1/name> "Ray, Man", "Ray, Man," ;
     <http://xmlns.com/foaf/0.1/surname> "Ray" .
 
-<http://library.cca.edu/core/subjects/ray_man_1890-1976#concept>
+<http://library.cca.edu/core/people/ray_man_1890-1976#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/ray_man_1890-1976> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Ray, Man, 1890-1976" .
@@ -291,17 +291,17 @@
     n1:titleProper "Alvar Aalto" ;
     n3:subject "Aalto, Alvar, 1898-1976", "Documentary films about architecture", "Documentary films--Videorecordings", "Nonfiction films" ;
     n2:date "198-?" ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/aalto_alvar_1898-1976#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept> ;
     n2:title "Alvar Aalto" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/aalto_alvar_1898-1976>
     n2:date "1898-1976" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/aalto_alvar_1898-1976#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Aalto, Alvar," .
 
-<http://library.cca.edu/core/subjects/aalto_alvar_1898-1976#concept>
+<http://library.cca.edu/core/people/aalto_alvar_1898-1976#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/aalto_alvar_1898-1976> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Aalto, Alvar, 1898-1976" .
@@ -312,17 +312,17 @@
     n1:titleProper "Le Corbusier" ;
     n3:subject "Architecture--France--Paris--History--20th century", "Documentary films about architecture", "Documentary films--Videorecordings", "Le Corbusier, 1887-1965", "Nonfiction films", "Villa La Roche" ;
     n2:dateCopyrighted "1991." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/architecture--france--paris--history--20th_century#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/subjects/villa_la_roche#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/organizations/villa_la_roche#concept>, <http://library.cca.edu/core/people/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/s/architecture--france--paris--history--20th_century#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept> ;
     n2:title "Le Corbusier Villa La Roche" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/le_corbusier_1887-1965>
     n2:date "1887-1965" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/le_corbusier_1887-1965#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Le Corbusier," .
 
-<http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>
+<http://library.cca.edu/core/people/le_corbusier_1887-1965#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/le_corbusier_1887-1965> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Le Corbusier, 1887-1965" .
@@ -330,10 +330,10 @@
 <http://library.cca.edu/core/organizations/villa_la_roche>
     n2:description "" ;
     a <http://xmlns.com/foaf/0.1/Organization> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/villa_la_roche#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_la_roche#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Villa La Roche" .
 
-<http://library.cca.edu/core/subjects/villa_la_roche#concept>
+<http://library.cca.edu/core/organizations/villa_la_roche#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_la_roche> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Villa La Roche" .
@@ -361,7 +361,7 @@
     n3:creator "Viola, Bill, 1951-" ;
     n3:subject "Experimental films--Videorecordings", "Nonfiction films", "Video and performance art--Videorecordings", "Video art--United States", "Viola, Bill, 1951-" ;
     n2:creator <http://library.cca.edu/core/people/viola_bill_1951-> ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept>, <http://library.cca.edu/core/s/video_art--united_states#concept>, <http://library.cca.edu/core/subjects/viola_bill_1951-#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/viola_bill_1951-#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/s/video_and_performance_art--videorecordings#concept>, <http://library.cca.edu/core/s/video_art--united_states#concept> ;
     n2:title "Bill Viola selected works" ;
     <http://purl.org/ontology/bibo/isbn10> "0931393280" ;
     <http://purl.org/ontology/bibo/isbn13> "9780931393280" ;
@@ -370,12 +370,12 @@
 <http://library.cca.edu/core/people/viola_bill_1951->
     n2:date "1951-" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/viola_bill_1951-#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/viola_bill_1951-#concept> ;
     <http://xmlns.com/foaf/0.1/givenname> "Bill" ;
     <http://xmlns.com/foaf/0.1/name> "Viola, Bill", "Viola, Bill," ;
     <http://xmlns.com/foaf/0.1/surname> "Viola" .
 
-<http://library.cca.edu/core/subjects/viola_bill_1951-#concept>
+<http://library.cca.edu/core/people/viola_bill_1951-#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/viola_bill_1951-> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Viola, Bill, 1951-" .
@@ -388,7 +388,7 @@
     n1:titleProper "The Hong Kong and Shanghai bank" ;
     n3:subject "Bank buildings--Hong Kong (China)", "Documentary films about architecture", "Documentary films--Videorecordings", "Hong Kong and Shanghai Bank (Hong Kong)", "Nonfiction films" ;
     n2:dateCopyrighted "1987." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/bank_buildings--hong_kong_china#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong#concept>, <http://library.cca.edu/core/s/bank_buildings--hong_kong_china#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept> ;
     n2:title "The Hong Kong and Shanghai bank" ;
     <http://purl.org/ontology/bibo/edition> "Special ed" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
@@ -396,10 +396,10 @@
 <http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong>
     n2:description "" ;
     a <http://xmlns.com/foaf/0.1/Organization> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Hong Kong and Shanghai Bank (Hong Kong)" .
 
-<http://library.cca.edu/core/subjects/hong_kong_and_shanghai_bank_hong_kong#concept>
+<http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/hong_kong_and_shanghai_bank_hong_kong> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Hong Kong and Shanghai Bank (Hong Kong)" .
@@ -414,17 +414,17 @@
     n1:titleProper "Le Corbusier" ;
     n3:subject "Documentary films about architecture", "Documentary films--Videorecordings", "Le Corbusier, 1887-1965", "Nonfiction films", "Poissy (France)--Buildings, structures, etc", "Villa Savoye (Poissy, France)" ;
     n2:dateCopyrighted "1975." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh98005282#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/s/poissy_france--buildings_structures_etc#concept>, <http://library.cca.edu/core/subjects/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh98005282#concept>, <http://library.cca.edu/core/organizations/villa_savoye_poissy_france#concept>, <http://library.cca.edu/core/people/le_corbusier_1887-1965#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/s/documentary_films_about_architecture#concept>, <http://library.cca.edu/core/s/poissy_france--buildings_structures_etc#concept> ;
     n2:title "Le Corbusier Villa Savoye" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/organizations/villa_savoye_poissy_france>
     n2:description "" ;
     a <http://xmlns.com/foaf/0.1/Organization> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_savoye_poissy_france#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Villa Savoye (Poissy, France)" .
 
-<http://library.cca.edu/core/subjects/villa_savoye_poissy_france#concept>
+<http://library.cca.edu/core/organizations/villa_savoye_poissy_france#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/organizations/villa_savoye_poissy_france> ;
     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://lcsubjects.org/subjects/sh98005282#concept> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#corporateNames> ;
@@ -455,17 +455,17 @@
     n1:titleProper "River of love" ;
     n3:subject "Amr̥tānandamayi, Mātā, 1953-", "Documentary films--Videorecordings", "Nonfiction films", "Spiritual life--Hinduism" ;
     n2:dateCopyrighted "1999." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85126769#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh85126769#concept>, <http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept>, <http://library.cca.edu/core/s/documentary_films--videorecordings#concept> ;
     n2:title "River of love a documentary drama on the life of Ammachi" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953->
     n2:date "1953-" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Amr̥tānandamayi," .
 
-<http://library.cca.edu/core/subjects/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept>
+<http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/amr\u0325ta\u0304nandamayi_ma\u0304ta\u0304_1953-> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Amr̥tānandamayi, Mātā, 1953-" .
@@ -499,17 +499,17 @@
     n1:otherTitleInformation "May 2, 2003" ;
     n1:titleProper "Gertrude Schaufel memorial" ;
     n3:subject "Documentation films--Videorecordings", "Nonfiction films", "Schaufel, Gertrude, 1921-2003" ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/s/documentation_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://library.cca.edu/core/people/schaufel_gertrude_1921-2003#concept>, <http://library.cca.edu/core/s/documentation_films--videorecordings#concept> ;
     n2:title "Gertrude Schaufel memorial May 2, 2003" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/schaufel_gertrude_1921-2003>
     n2:date "1921-2003" ;
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/schaufel_gertrude_1921-2003#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Schaufel, Gertrude," .
 
-<http://library.cca.edu/core/subjects/schaufel_gertrude_1921-2003#concept>
+<http://library.cca.edu/core/people/schaufel_gertrude_1921-2003#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/schaufel_gertrude_1921-2003> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Schaufel, Gertrude, 1921-2003" .
@@ -541,16 +541,16 @@
     n1:titleProper "Chris Welsby" ;
     n3:subject "Experimental films", "Experimental films--Videorecordings", "Nonfiction films", "Video art", "Welsby, Chris" ;
     n2:dateCopyrighted "2004." ;
-    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2007025206#concept>, <http://lcsubjects.org/subjects/sh85046442#concept>, <http://lcsubjects.org/subjects/sh85143195#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept>, <http://library.cca.edu/core/subjects/welsby_chris#concept> ;
+    n2:subject <http://lcsubjects.org/subjects/sh2007006366#concept>, <http://lcsubjects.org/subjects/sh2007025008#concept>, <http://lcsubjects.org/subjects/sh2007025206#concept>, <http://lcsubjects.org/subjects/sh85046442#concept>, <http://lcsubjects.org/subjects/sh85143195#concept>, <http://library.cca.edu/core/people/welsby_chris#concept>, <http://library.cca.edu/core/s/experimental_films--videorecordings#concept> ;
     n2:title "Chris Welsby selected films 1973-1993" ;
     a <http://purl.org/ontology/bibo/Film>, <http://vocab.org/frbr/core#Manifestation> .
 
 <http://library.cca.edu/core/people/welsby_chris>
     a <http://xmlns.com/foaf/0.1/Person> ;
-    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/subjects/welsby_chris#concept> ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/welsby_chris#concept> ;
     <http://xmlns.com/foaf/0.1/name> "Welsby, Chris" .
 
-<http://library.cca.edu/core/subjects/welsby_chris#concept>
+<http://library.cca.edu/core/people/welsby_chris#concept>
     <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://library.cca.edu/core/people/welsby_chris> ;
     <http://www.w3.org/2004/02/skos/core#inScheme> <http://library.cca.edu/core/subjects#personalNames> ;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Welsby, Chris" .

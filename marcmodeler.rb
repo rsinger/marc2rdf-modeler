@@ -37,7 +37,7 @@ class MARC::Record
     
   def subdivided?(subject)
     subject.subfields.each do | subfield |
-      if ["k","v","x","y","z"]
+      if ["k","v","x","y","z"].index(subfield.code)
         return true
       end
     end
@@ -85,8 +85,6 @@ class MARC::Record
       if self['245']['a']
         title = self['245']['a'].strip_trailing_punct
         manifestation.assert("[rda:titleProper]", self['245']['a'].strip_trailing_punct)
-      else
-        puts "No 245$a:  #{self['245']}"
       end
       if self['245']['b']
         title << " "+self['245']['b'].strip_trailing_punct
@@ -95,6 +93,9 @@ class MARC::Record
       if self['245']['c']
         manifestation.assert("[rda:statementOfResponsibility]", self['245']['c'].strip_trailing_punct)
       end
+    end
+    if self['245']['n']
+      manifestation.assert("[bibo:number]", self['245']['n'])
     end
     manifestation.assert("[dct:title]", title)
     if self['210']
@@ -145,7 +146,7 @@ class MARC::Record
       if ["600","610","611","630"].index(subject.tag) || !authority
         
         if subject.tag =~ /^(600|610|696|697)$/
-          if !subdivided?(subject)
+          unless subdivided?(subject)
             concept = RDFResource.new("#{@@base_uri}/#{Identity.path(subject)}/#{literal.slug}#concept")
             identity = RDFResource.new("#{@@base_uri}/#{Identity.path(subject)}/#{literal.slug}")
           else
@@ -201,7 +202,7 @@ class MARC::Record
             concept = RDFResource.new("#{@@base_uri}/w/#{literal.slug}#concept")
             work = RDFResource.new("#{@@base_uri}/w/#{literal.slug}")
           else
-            concept = RDFResource.new("#{@@base_uri}/s/#{literal.slug}#concept")
+            concept = RDFResource.new("#{@@base_uri}/subjects/#{literal.slug}#concept")
             work_subject = top_concept(subject)
             work = RDFResource.new("#{@@base_uri}/w/#{subject_to_string(work_subject).slug}")
           end
@@ -278,10 +279,31 @@ class MARC::Record
 
     meetings = self.find_all{|field| field.tag =~ /111|411|711|792|798|811|898/}
     meetings.each do | meeting |
-      identity = Identity.new_from_field(identity_field, "#{@@base_uri}/events/")
-      resources << identity.resource
-      relate_identity(identity_field, manifestation, identity)
-    end         
+      event = Event.new_from_field(meeting, "#{@@base_uri}/events/")
+      resources << event.resource
+      relate_event(meeting, manifestation, event)
+    end  
+    if self['506'] && self['506']['a']
+      manifestation.assert('[dct:accessRights]',self['506']['a'])
+    end
+    if aud = self.audience_level(true)
+      audience = RDFResource.new("#{@@base_uri}/audiences/#{aud.slug}")
+      audience.relate("[rdf:type]","[dct:AgentClass]")
+      audience.assert("[dct:title]", aud)
+      manifestation.relate("[dct:audience]",audience.uri)
+      resources << audience
+    end
+    
+    if self['260']
+      subfield_c = self['260'].find_all {|subfield| subfield.code == 'c'}
+      subfield_c.each do | c |
+        if c.value =~ /\bc[0-9]/
+          manifestation.assert("[dct:dateCopyrighted]", c.value.sub(/\bc/,''))
+        else
+          manifestation.assert("[dct:date]",c.value.strip_leading_and_trailing_punct)
+        end
+      end
+    end
     resources
   end
   
@@ -336,6 +358,22 @@ class MARC::BookRecord
     book = resources[0]
     if self.is_conference?
       book.relate("[rdf:type]","[bibo:Proceedings]")
+    elsif self.is_manuscript?
+      book.relate("[rdf:type]","[bibo:Manuscript]")
+    elsif self.nature_of_contents.index("m")
+      book.relate("[rdf:type]","[bibo:Thesis]")
+    elsif self.nature_of_contents.index("u")
+      book.relate("[rdf:type]","[bibo:Standard]")
+    elsif self.nature_of_contents.index("j")
+      book.relate("[rdf:type]","[bibo:Patent]")    
+    elsif self.nature_of_contents.index("t")
+      book.relate("[rdf:type]","[bibo:Report]")
+    elsif self.nature_of_contents.index("l")
+      book.relate("[rdf:type]","[bibo:Legislation]")
+    elsif  self.nature_of_contents.index("v")
+      book.relate("[rdf:type]","[bibo:LegalCaseDocument]")
+    elsif !(self.nature_of_contents & ["c", "d", "e", "r"]).empty?
+      book.relate("[rdf:type]","[bibo:ReferenceSource]")
     else
       book.relate("[rdf:type]", "[bibo:Book]")
     end
@@ -345,6 +383,20 @@ class MARC::BookRecord
       end
     end
     #puts book.to_rdfxml
+    return resources
+  end
+end
+
+class MARC::VisualRecord
+  def to_rdf_resources
+    resources = super
+    vis = resources[0]
+    type = self.material_type(true)
+    if type == "Videorecording" or (self['245'] && self['245']['h'] && self['245']['h'] =~ /videorecording/)
+      vis.relate("[rdf:type]","[bibo:Film]")
+    elsif type
+      vis.assert("[dct:type]", type)
+    end
     return resources
   end
 end
@@ -460,11 +512,15 @@ rescue Errno::ENOENT
   exit
 end
 @resources = []
+types = []
 reader.each do | record |
+  types << record.class.to_s
+  next unless record.is_a?(MARC::VisualRecord)
   @resources += record.to_rdf_resources
   i += 1
   break if i > 1000
 end
+#puts types.uniq.inspect
 puts "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
 @resources.each do | resource |
   puts resource.to_rdfxml
