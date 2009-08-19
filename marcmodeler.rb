@@ -21,8 +21,7 @@ class String
   end
   def strip_leading_and_trailing_punct
     str = self.sub(/[\.:,;\/\s\)\]]\s*$/,'').strip
-    str.sub!(/^\s*[\.:,;\/\s\(\[]/,'').strip
-    str
+    return str.strip.sub(/^\s*[\.:,;\/\s\(\[]/,'')
   end  
   def lpad(count=1)
     "#{" " * count}#{self}"
@@ -345,7 +344,7 @@ class MARC::Record
     else
       unless ["100","110"].index(datafield.tag)
         resource.relate("[dct:contributor]", identity.resource.uri)
-        resource.assert("[dc:contributor]", identity.resource.name)        
+        resource.assert("[dc:contributor]", identity.name)        
       end
     end
   end
@@ -398,14 +397,6 @@ class MARC::VisualRecord
       vis.assert("[dct:type]", type)
     end
     return resources
-  end
-end
-
-class MARC::DataField
-  def [](code)
-    subfield = self.find {|s| s.code == code}
-    return subfield.value.sub(/\.\s*/,'') if subfield
-    return
   end
 end
 
