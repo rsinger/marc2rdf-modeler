@@ -1,0 +1,13 @@
+uri: 
+    base: http://example.org
+    resource_path: /collections/
+    resource_identifier_field: 001
+    identity_path: /identities/
+    subject_path: /subjects/
+    
+database:
+    :adapter: sqlite
+    :database: db/storage.db
+    #:host:
+    #:user:
+    #:password:
