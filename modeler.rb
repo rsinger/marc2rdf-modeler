@@ -5,9 +5,10 @@ require 'rdf/ntriples'
 require 'sru'
 require 'sequel'
 require 'yaml'
+require 'isbn/tools'
 
 CONFIG = YAML.load_file('config/config.yml')
-DB = Sequel.connect(DB['database'])
+DB = Sequel.connect(CONFIG['database'])
 # Initialize the vocabularies we will be drawing from
 module RDF
   class BIBO < RDF::Vocabulary("http://purl.org/ontology/bibo/");end
@@ -39,20 +40,20 @@ class String
 end
 class IdentifierFieldNotFoundError < Exception;end
 module BookModeler
-  def self.included(o)
-    case
-    when o.is_manuscript? then o.set_type(RDF::BIBO.Manuscript)
-    when o.is_conference? then o.set_type(RDF::BIBO.Proceedings)
+  def self.extended(o)
+    o.set_type case
+    when o.record.is_manuscript? then RDF::BIBO.Manuscript
+    when o.record.is_conference? then RDF::BIBO.Proceedings
     else
-      o.set_type(RDF::BIBO.Book)
+      RDF::BIBO.Book
     end
   end
 end
 
 module SerialModeler
-  def self.included(o)
+  def self.extended(o)
     t = nil
-    if n = o.nature_of_work
+    if n = o.record.nature_of_work
       t = case
       when 'd' then RDF::BIBO.ReferenceSource
       when 'e' then RDF::BIBO.ReferenceSource
@@ -68,6 +69,19 @@ module SerialModeler
       when 'z' then RDF::BIBO.Treaty
       end
     end
+    unless t
+      if st = o.record.serial_type
+        t = case
+        when 'a' then RDF::BIBO.Collection
+        when 'm' then RDF::BIBO.Series
+        when 'n' then RDF::BIBO.Newspaper
+        when 'p' then RDF::BIBO.Periodical
+        when 'w' then RDF::BIBO.Website
+        end
+      end
+    end
+    t = RDF::BIBO.Periodical unless t
+    o.set_type(t)  
   end  
 end
 class RDFModeler
@@ -80,9 +94,10 @@ class RDFModeler
   
   def parse
     case @record
-    when MARC::BookRecord then include(BookModeler)
-    when MARC::SerialRecord then include(SerialModeler)
+    when MARC::BookRecord then extend(BookModeler)
+    when MARC::SerialRecord then extend(SerialModeler)
     end
+    gather_identifiers
   end
   
   def set_type(t)
@@ -94,6 +109,36 @@ class RDFModeler
     id = @record[CONFIG['uri']['resource_identifier_field']]
     raise IdentifierFieldNotFoundError unless id
     @uri += id.value.strip.slug
+  end
+  
+  def gather_identifiers
+    fld_list = ['010', '020','022']
+    @record.each_by_tag(fld_list) do |field|
+      case field.tag
+      when '010' then model_lccn(field)
+      when '020' then model_isbn(field)
+      when '022' then model_isbn(field)
+      end
+    end
+  end
+  
+  def model_lccn(f)
+    return unless lccn = f['a']
+    lccn.strip!
+    prefix = nil
+    year = nil
+    serial = nil
+    if prefix_m = lccn.match(/^([a-z]{1,3})(\s|\d)/)
+      prefix = prefix_m[1]
+    year_first_digit = lccn.match(/^[a-z]{0,3}\s*(\d)/)
+    if year_first_digit
+      year_m = case year_first_digit[1]
+      when "2" then lccn.match(/^[a-z]{0,3}\s*(\d{4})/)
+      else
+        lccn.match(/^[a-z]{0,3}\s*(\d{2})/)
+      end
+      year = year_m[1] if year_m
+    end
   end
 end
   
